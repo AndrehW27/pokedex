@@ -34,17 +34,12 @@ export class PokedexComponent implements OnInit {
       let pokeData2 = await res2.json();
       this.pokeListToRender[i] = pokeData2;
     }
-    console.log(this.pokeListToRender);
-
   }
 
   GoNext = async () => {
     this.pagAtual = this.pagAtual+1;
     this.offSet = this.offSet + 20;
-    console.log("Página Atual: " + this.pagAtual);
-    console.log("OffSet: " + this.offSet);
     let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this.offSet);
-    console.log(res);
     let pokeData = await res.json();
     this.pokemonList = await pokeData.results;
     for (let i = 0; i < this.pokemonList.length; i++) {
@@ -61,10 +56,7 @@ export class PokedexComponent implements OnInit {
     if (this.pagAtual > 1) {
       this.pagAtual = this.pagAtual-1;
       this.offSet = this.offSet - 20;
-      console.log("Página Atual: " + this.pagAtual);
-      console.log("OffSet: " + this.offSet);
       let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this.offSet);
-      console.log(res);
       let pokeData = await res.json();
       this.pokemonList = await pokeData.results;
       for (let i = 0; i < this.pokemonList.length; i++) {
@@ -75,9 +67,7 @@ export class PokedexComponent implements OnInit {
         let pokeData2 = await res2.json();
         this.pokeListToRender[i] = pokeData2;
       }
-    } else {
-      console.log("Você já está na primeira página.");
-    }
+    } 
   }
 
   constructor(private _pokeinfosService: PokeinfosService) { }

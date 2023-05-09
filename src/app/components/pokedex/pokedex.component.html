@@ -9,7 +9,7 @@
       <div class="types">
         <p [ngClass]="{      
           'normalClass':pokeListToRender[i].types[0].type.name==='normal',
-          'fightClass':pokeListToRender[i].types[0].type.name==='fight',
+          'fightingClass':pokeListToRender[i].types[0].type.name==='fighting',
           'flyingClass':pokeListToRender[i].types[0].type.name==='flying',
           'poisonClass':pokeListToRender[i].types[0].type.name==='poison',
           'groundClass':pokeListToRender[i].types[0].type.name==='ground',
@@ -31,7 +31,7 @@
         </p>
         <p *ngIf="pokeListToRender[i].types[1]" [ngClass]="{      
           'normalClass':pokeListToRender[i].types[1].type.name==='normal',
-          'fightClass':pokeListToRender[i].types[1].type.name==='fight',
+          'fightingClass':pokeListToRender[i].types[1].type.name==='fighting',
           'flyingClass':pokeListToRender[i].types[1].type.name==='flying',
           'poisonClass':pokeListToRender[i].types[1].type.name==='poison',
           'groundClass':pokeListToRender[i].types[1].type.name==='ground',

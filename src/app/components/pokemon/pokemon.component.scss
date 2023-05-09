@@ -91,8 +91,8 @@
     background-color: var(--normal);
   }
 
-  .fightClass {
-    background-color: var(--fight);
+  .fightingClass {
+    background-color: var(--fighting);
   }
 
   .flyingClass {
@@ -170,8 +170,8 @@
     color: var(--normal);
   }
 
-  .fightText {
-    color: var(--fight);
+  .fightingText {
+    color: var(--fighting);
   }
 
   .flyingText {
@@ -284,3 +284,21 @@
     }
   }
 }
+
+.gohome-button{
+  border-radius: 6px;
+  border: none; 
+  background-color: var(--verm);
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  margin: 12px;
+}
+
+.gohome-button:hover {
+  background-color: var(--dark-verm);
+}
+

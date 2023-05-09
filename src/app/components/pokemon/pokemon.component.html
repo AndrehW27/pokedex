@@ -1,7 +1,7 @@
-<div class="pokemon-container">
+<div *ngIf="!notFound" class="pokemon-container">
   <h1 [ngClass]="{      
     'normalText':_pokeinfosService.tipo1Serv==='normal',
-    'fightText':_pokeinfosService.tipo1Serv==='fight',
+    'fightingText':_pokeinfosService.tipo1Serv==='fighting',
     'flyingText':_pokeinfosService.tipo1Serv==='flying',
     'poisonText':_pokeinfosService.tipo1Serv==='poison',
     'groundText':_pokeinfosService.tipo1Serv==='ground',
@@ -28,7 +28,7 @@
   <div class="tipos">
     <div class="tipo1" [ngClass]="{      
         'normalClass':_pokeinfosService.tipo1Serv==='normal',
-        'fightClass':_pokeinfosService.tipo1Serv==='fight',
+        'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
         'flyingClass':_pokeinfosService.tipo1Serv==='flying',
         'poisonClass':_pokeinfosService.tipo1Serv==='poison',
         'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -51,7 +51,7 @@
 
     <div *ngIf="_pokeinfosService.tipo2Serv" class="tipo2" [ngClass]="{      
       'normalClass':_pokeinfosService.tipo2Serv==='normal',
-      'fightClass':_pokeinfosService.tipo2Serv==='fight',
+      'fightingClass':_pokeinfosService.tipo2Serv==='fighting',
       'flyingClass':_pokeinfosService.tipo2Serv==='flying',
       'poisonClass':_pokeinfosService.tipo2Serv==='poison',
       'groundClass':_pokeinfosService.tipo2Serv==='ground',
@@ -83,7 +83,7 @@
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.hpServ+'px'}" [ngClass]="{      
           'normalClass':_pokeinfosService.tipo1Serv==='normal',
-          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
           'flyingClass':_pokeinfosService.tipo1Serv==='flying',
           'poisonClass':_pokeinfosService.tipo1Serv==='poison',
           'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -112,7 +112,7 @@
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.atkServ+'px'}" [ngClass]="{      
           'normalClass':_pokeinfosService.tipo1Serv==='normal',
-          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
           'flyingClass':_pokeinfosService.tipo1Serv==='flying',
           'poisonClass':_pokeinfosService.tipo1Serv==='poison',
           'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -141,7 +141,7 @@
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.speAtkServ+'px'}" [ngClass]="{      
           'normalClass':_pokeinfosService.tipo1Serv==='normal',
-          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
           'flyingClass':_pokeinfosService.tipo1Serv==='flying',
           'poisonClass':_pokeinfosService.tipo1Serv==='poison',
           'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -170,7 +170,7 @@
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.defServ+'px'}" [ngClass]="{      
           'normalClass':_pokeinfosService.tipo1Serv==='normal',
-          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
           'flyingClass':_pokeinfosService.tipo1Serv==='flying',
           'poisonClass':_pokeinfosService.tipo1Serv==='poison',
           'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -199,7 +199,7 @@
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.speDefServ+'px'}" [ngClass]="{      
           'normalClass':_pokeinfosService.tipo1Serv==='normal',
-          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
           'flyingClass':_pokeinfosService.tipo1Serv==='flying',
           'poisonClass':_pokeinfosService.tipo1Serv==='poison',
           'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -228,7 +228,7 @@
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.spdServ+'px'}" [ngClass]="{      
           'normalClass':_pokeinfosService.tipo1Serv==='normal',
-          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'fightingClass':_pokeinfosService.tipo1Serv==='fighting',
           'flyingClass':_pokeinfosService.tipo1Serv==='flying',
           'poisonClass':_pokeinfosService.tipo1Serv==='poison',
           'groundClass':_pokeinfosService.tipo1Serv==='ground',
@@ -252,5 +252,12 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div *ngIf="notFound" class="notFound" style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+  <img id="img404" src="{{img404}}" style="width: 500px;" alt="">
+  <div>
+    <button class="gohome-button" routerLink="/home">Go home</button>
   </div>
 </div>

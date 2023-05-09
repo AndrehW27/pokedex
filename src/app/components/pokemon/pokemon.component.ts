@@ -6,8 +6,10 @@ import { PokeinfosService } from 'src/app/shared/services/pokeinfos.service';
   templateUrl: './pokemon.component.html',
   styleUrls: ['./pokemon.component.scss']
 })
-export class PokemonComponent implements OnInit {  
+export class PokemonComponent implements OnInit {
 
+  notFound = true;
+  img404 ="../../../assets/Loading_icon.gif";
   nome = "";
   id = 0;
   imagem = "";
@@ -23,15 +25,15 @@ export class PokemonComponent implements OnInit {
   spd = 0;
 
   GetSpecificPoke = async () => {
-   
-      let res = await fetch('https://pokeapi.co/api/v2/pokemon/' + this._pokeinfosService.inputServ);
-      console.log(this._pokeinfosService.inputServ);
-      // if (res.status === 404) {
-      //   this.notFound = true;
-      //   console.log(this.notFound);
-      // }
-      let pokeData = await res.json();
 
+    let res = await fetch('https://pokeapi.co/api/v2/pokemon/' + this._pokeinfosService.inputServ);
+    if (res.status === 404) {
+      this.notFound = true;
+      this.img404 = "../../../assets/notfound.png"
+    } else if (res.status !== 404) {
+      this.img404 = "";
+      this.notFound = false;
+      let pokeData = await res.json();
       this.nome = await pokeData.name.charAt(0).toUpperCase() + pokeData.name.slice(1);
       this.id = await pokeData.id;
       if (this.id.toString().length === 1) {
@@ -65,12 +67,14 @@ export class PokemonComponent implements OnInit {
       this._pokeinfosService.speAtkServ = this.speAtk;
       this._pokeinfosService.speDefServ = this.speDef;
       this._pokeinfosService.spdServ = this.spd;
-    
+    }
+
+
   }
 
-  constructor(public _pokeinfosService: PokeinfosService) {}
+  constructor(public _pokeinfosService: PokeinfosService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.GetSpecificPoke();
   }
 

@@ -7,9 +7,8 @@ import { PokeinfosService } from 'src/app/shared/services/pokeinfos.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  
-  notFound = false;
+export class HomeComponent implements OnInit {  
+
   inputValue = "";
 
   SetInputValue = () =>{
