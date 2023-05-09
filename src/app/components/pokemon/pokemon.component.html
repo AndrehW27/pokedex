@@ -1,0 +1,258 @@
+<div class="pokemon-container">
+  <h1 [ngClass]="{      
+    'normalText':_pokeinfosService.tipo1Serv==='normal',
+    'fightText':_pokeinfosService.tipo1Serv==='fight',
+    'flyingText':_pokeinfosService.tipo1Serv==='flying',
+    'poisonText':_pokeinfosService.tipo1Serv==='poison',
+    'groundText':_pokeinfosService.tipo1Serv==='ground',
+    'rockText':_pokeinfosService.tipo1Serv==='rock',
+    'bugText':_pokeinfosService.tipo1Serv==='bug',
+    'ghostText':_pokeinfosService.tipo1Serv==='ghost',
+    'steelText':_pokeinfosService.tipo1Serv==='steel',
+    'fireText':_pokeinfosService.tipo1Serv==='fire',
+    'waterText':_pokeinfosService.tipo1Serv==='water', 
+    'grassText':_pokeinfosService.tipo1Serv==='grass',
+    'electricText':_pokeinfosService.tipo1Serv==='electric',
+    'psychicText':_pokeinfosService.tipo1Serv==='psychic',
+    'iceText':_pokeinfosService.tipo1Serv==='ice',
+    'dragonText':_pokeinfosService.tipo1Serv==='dragon',
+    'darkText':_pokeinfosService.tipo1Serv==='dark',
+    'fairyText':_pokeinfosService.tipo1Serv==='fairy'
+    }">
+    {{_pokeinfosService.nomeServ}}
+    <span>
+      <!-- *ngIf="{{_pokeinfosService.idServ}}" -->
+      #{{_pokeinfosService.idServ}}
+    </span>
+  </h1>
+  <!-- <div class="id">#{{_pokeinfosService.idServ}}</div> -->
+  <img src={{_pokeinfosService.imgServ}} alt="">
+  <div class="tipos">
+    <div class="tipo1" [ngClass]="{      
+        'normalClass':_pokeinfosService.tipo1Serv==='normal',
+        'fightClass':_pokeinfosService.tipo1Serv==='fight',
+        'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+        'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+        'groundClass':_pokeinfosService.tipo1Serv==='ground',
+        'rockClass':_pokeinfosService.tipo1Serv==='rock',
+        'bugClass':_pokeinfosService.tipo1Serv==='bug',
+        'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+        'steelClass':_pokeinfosService.tipo1Serv==='steel',
+        'fireClass':_pokeinfosService.tipo1Serv==='fire',
+        'waterClass':_pokeinfosService.tipo1Serv==='water', 
+        'grassClass':_pokeinfosService.tipo1Serv==='grass',
+        'electricClass':_pokeinfosService.tipo1Serv==='electric',
+        'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+        'iceClass':_pokeinfosService.tipo1Serv==='ice',
+        'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+        'darkClass':_pokeinfosService.tipo1Serv==='dark',
+        'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+        }">
+      {{_pokeinfosService.tipo1Serv}}
+    </div>
+
+    <div *ngIf="_pokeinfosService.tipo2Serv" class="tipo2" [ngClass]="{      
+      'normalClass':_pokeinfosService.tipo2Serv==='normal',
+      'fightClass':_pokeinfosService.tipo2Serv==='fight',
+      'flyingClass':_pokeinfosService.tipo2Serv==='flying',
+      'poisonClass':_pokeinfosService.tipo2Serv==='poison',
+      'groundClass':_pokeinfosService.tipo2Serv==='ground',
+      'rockClass':_pokeinfosService.tipo2Serv==='rock',
+      'bugClass':_pokeinfosService.tipo2Serv==='bug',
+      'ghostClass':_pokeinfosService.tipo2Serv==='ghost',
+      'steelClass':_pokeinfosService.tipo2Serv==='steel',
+      'fireClass':_pokeinfosService.tipo2Serv==='fire',
+      'waterClass':_pokeinfosService.tipo2Serv==='water', 
+      'grassClass':_pokeinfosService.tipo2Serv==='grass',
+      'electricClass':_pokeinfosService.tipo2Serv==='electric',
+      'psychicClass':_pokeinfosService.tipo2Serv==='psychic',
+      'iceClass':_pokeinfosService.tipo2Serv==='ice',
+      'dragonClass':_pokeinfosService.tipo2Serv==='dragon',
+      'darkClass':_pokeinfosService.tipo2Serv==='dark',
+      'fairyClass':_pokeinfosService.tipo2Serv==='fairy'
+      }">
+      {{_pokeinfosService.tipo2Serv}}
+    </div>
+  </div>
+  <div class="peso-altura">
+    <div class="peso">{{_pokeinfosService.weightServ}} Kg</div>
+    <div class="altura">{{_pokeinfosService.heightServ}} m</div>
+  </div>
+
+  <div class="stats-container">
+    <div class="progress-container" [ngStyle]="{'margin-top':'50px'}">
+      <div class="stat">HP:</div>
+      <div class="minha-progress-bar-fundo">
+        <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.hpServ+'px'}" [ngClass]="{      
+          'normalClass':_pokeinfosService.tipo1Serv==='normal',
+          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+          'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+          'groundClass':_pokeinfosService.tipo1Serv==='ground',
+          'rockClass':_pokeinfosService.tipo1Serv==='rock',
+          'bugClass':_pokeinfosService.tipo1Serv==='bug',
+          'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+          'steelClass':_pokeinfosService.tipo1Serv==='steel',
+          'fireClass':_pokeinfosService.tipo1Serv==='fire',
+          'waterClass':_pokeinfosService.tipo1Serv==='water', 
+          'grassClass':_pokeinfosService.tipo1Serv==='grass',
+          'electricClass':_pokeinfosService.tipo1Serv==='electric',
+          'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+          'iceClass':_pokeinfosService.tipo1Serv==='ice',
+          'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+          'darkClass':_pokeinfosService.tipo1Serv==='dark',
+          'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+          }">
+          <div class="statValue">
+            {{_pokeinfosService.hpServ}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="stat">ATK:</div>
+      <div class="minha-progress-bar-fundo">
+        <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.atkServ+'px'}" [ngClass]="{      
+          'normalClass':_pokeinfosService.tipo1Serv==='normal',
+          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+          'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+          'groundClass':_pokeinfosService.tipo1Serv==='ground',
+          'rockClass':_pokeinfosService.tipo1Serv==='rock',
+          'bugClass':_pokeinfosService.tipo1Serv==='bug',
+          'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+          'steelClass':_pokeinfosService.tipo1Serv==='steel',
+          'fireClass':_pokeinfosService.tipo1Serv==='fire',
+          'waterClass':_pokeinfosService.tipo1Serv==='water', 
+          'grassClass':_pokeinfosService.tipo1Serv==='grass',
+          'electricClass':_pokeinfosService.tipo1Serv==='electric',
+          'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+          'iceClass':_pokeinfosService.tipo1Serv==='ice',
+          'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+          'darkClass':_pokeinfosService.tipo1Serv==='dark',
+          'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+          }">
+          <div class="statValue">
+            {{_pokeinfosService.atkServ}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="stat">S-ATK:</div>
+      <div class="minha-progress-bar-fundo">
+        <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.speAtkServ+'px'}" [ngClass]="{      
+          'normalClass':_pokeinfosService.tipo1Serv==='normal',
+          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+          'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+          'groundClass':_pokeinfosService.tipo1Serv==='ground',
+          'rockClass':_pokeinfosService.tipo1Serv==='rock',
+          'bugClass':_pokeinfosService.tipo1Serv==='bug',
+          'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+          'steelClass':_pokeinfosService.tipo1Serv==='steel',
+          'fireClass':_pokeinfosService.tipo1Serv==='fire',
+          'waterClass':_pokeinfosService.tipo1Serv==='water', 
+          'grassClass':_pokeinfosService.tipo1Serv==='grass',
+          'electricClass':_pokeinfosService.tipo1Serv==='electric',
+          'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+          'iceClass':_pokeinfosService.tipo1Serv==='ice',
+          'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+          'darkClass':_pokeinfosService.tipo1Serv==='dark',
+          'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+          }">
+          <div class="statValue">
+            {{_pokeinfosService.speAtkServ}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="stat">DEF:</div>
+      <div class="minha-progress-bar-fundo">
+        <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.defServ+'px'}" [ngClass]="{      
+          'normalClass':_pokeinfosService.tipo1Serv==='normal',
+          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+          'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+          'groundClass':_pokeinfosService.tipo1Serv==='ground',
+          'rockClass':_pokeinfosService.tipo1Serv==='rock',
+          'bugClass':_pokeinfosService.tipo1Serv==='bug',
+          'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+          'steelClass':_pokeinfosService.tipo1Serv==='steel',
+          'fireClass':_pokeinfosService.tipo1Serv==='fire',
+          'waterClass':_pokeinfosService.tipo1Serv==='water', 
+          'grassClass':_pokeinfosService.tipo1Serv==='grass',
+          'electricClass':_pokeinfosService.tipo1Serv==='electric',
+          'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+          'iceClass':_pokeinfosService.tipo1Serv==='ice',
+          'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+          'darkClass':_pokeinfosService.tipo1Serv==='dark',
+          'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+          }">
+          <div class="statValue">
+            {{_pokeinfosService.defServ}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="stat">S-DEF:</div>
+      <div class="minha-progress-bar-fundo">
+        <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.speDefServ+'px'}" [ngClass]="{      
+          'normalClass':_pokeinfosService.tipo1Serv==='normal',
+          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+          'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+          'groundClass':_pokeinfosService.tipo1Serv==='ground',
+          'rockClass':_pokeinfosService.tipo1Serv==='rock',
+          'bugClass':_pokeinfosService.tipo1Serv==='bug',
+          'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+          'steelClass':_pokeinfosService.tipo1Serv==='steel',
+          'fireClass':_pokeinfosService.tipo1Serv==='fire',
+          'waterClass':_pokeinfosService.tipo1Serv==='water', 
+          'grassClass':_pokeinfosService.tipo1Serv==='grass',
+          'electricClass':_pokeinfosService.tipo1Serv==='electric',
+          'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+          'iceClass':_pokeinfosService.tipo1Serv==='ice',
+          'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+          'darkClass':_pokeinfosService.tipo1Serv==='dark',
+          'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+          }">
+          <div class="statValue">
+            {{_pokeinfosService.speDefServ}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="stat">SPD:</div>
+      <div class="minha-progress-bar-fundo">
+        <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.spdServ+'px'}" [ngClass]="{      
+          'normalClass':_pokeinfosService.tipo1Serv==='normal',
+          'fightClass':_pokeinfosService.tipo1Serv==='fight',
+          'flyingClass':_pokeinfosService.tipo1Serv==='flying',
+          'poisonClass':_pokeinfosService.tipo1Serv==='poison',
+          'groundClass':_pokeinfosService.tipo1Serv==='ground',
+          'rockClass':_pokeinfosService.tipo1Serv==='rock',
+          'bugClass':_pokeinfosService.tipo1Serv==='bug',
+          'ghostClass':_pokeinfosService.tipo1Serv==='ghost',
+          'steelClass':_pokeinfosService.tipo1Serv==='steel',
+          'fireClass':_pokeinfosService.tipo1Serv==='fire',
+          'waterClass':_pokeinfosService.tipo1Serv==='water', 
+          'grassClass':_pokeinfosService.tipo1Serv==='grass',
+          'electricClass':_pokeinfosService.tipo1Serv==='electric',
+          'psychicClass':_pokeinfosService.tipo1Serv==='psychic',
+          'iceClass':_pokeinfosService.tipo1Serv==='ice',
+          'dragonClass':_pokeinfosService.tipo1Serv==='dragon',
+          'darkClass':_pokeinfosService.tipo1Serv==='dark',
+          'fairyClass':_pokeinfosService.tipo1Serv==='fairy'
+          }">
+          <div class="statValue">
+            {{_pokeinfosService.spdServ}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

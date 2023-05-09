@@ -1,0 +1,286 @@
+.pokemon-container {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  // background-color: rgb(205, 205, 205);
+
+  h1 {
+    margin-top: 24px;
+    // color: rgb(97, 97, 97);
+    padding: 6px 12px;
+
+    // border-radius: 6px;
+    // box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    span {
+      font-size: 18px;
+      font-size: normal;
+    }
+  }
+
+  img {
+    width: 350px;
+    position: relative;
+    animation: pokeAnimation 2s ease-in-out;
+    // animation: pokeFadein 2s ease-in-out;
+  }
+
+  @keyframes pokeAnimation {
+    from {
+      right: 200px;
+    }
+
+    to {
+      right: 0px;
+    }
+
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  .tipos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    // border: 1px solid black;
+    width: 300px;
+
+    .tipo1,
+    .tipo2 {
+      margin: 0 12px;
+      padding: 6px 12px;
+      font-weight: bold;
+      color: white;
+      border-radius: 4px;
+      // border: 1px solid black;
+
+    }
+  }
+
+  .peso-altura {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    // border: 1px solid black;
+    width: 300px;
+
+    .peso,
+    .altura {
+      margin: 0 12px;
+      padding: 6px 12px;
+      font-weight: bold;
+      color: rgb(97, 97, 97);
+      border-radius: 4px;
+
+      // border: 1px solid black;
+
+    }
+  }
+
+  .normalClass {
+    background-color: var(--normal);
+  }
+
+  .fightClass {
+    background-color: var(--fight);
+  }
+
+  .flyingClass {
+    background-color: var(--flying);
+  }
+
+  .poisonClass {
+    background-color: var(--poison);
+  }
+
+  .groundClass {
+    background-color: var(--ground);
+  }
+
+  .rockClass {
+    background-color: var(--rock);
+  }
+
+  .bugClass {
+    background-color: var(--bug);
+  }
+
+  .ghostClass {
+    background-color: var(--ghost);
+  }
+
+  .steelClass {
+    background-color: var(--steel);
+  }
+
+  .fireClass {
+    background-color: var(--fire);
+  }
+
+  .waterClass {
+    background-color: var(--water);
+  }
+
+  .grassClass {
+    background-color: var(--grass);
+  }
+
+  .electricClass {
+    background-color: var(--electric);
+  }
+
+  .psychicClass {
+    background-color: var(--psychic);
+  }
+
+  .iceClass {
+    background-color: var(--ice);
+  }
+
+  .iceClass {
+    background-color: var(--ice);
+  }
+
+  .dragonClass {
+    background-color: var(--dragon);
+  }
+
+  .darkClass {
+    background-color: var(--dark);
+  }
+
+  .fairyClass {
+    background-color: var(--fairy);
+  }
+
+
+  /////////////////////////
+
+  .normalText {
+    color: var(--normal);
+  }
+
+  .fightText {
+    color: var(--fight);
+  }
+
+  .flyingText {
+    color: var(--flying);
+  }
+
+  .poisonText {
+    color: var(--poison);
+  }
+
+  .groundText {
+    color: var(--ground);
+  }
+
+  .rockText {
+    color: var(--rock);
+  }
+
+  .bugText {
+    color: var(--bug);
+  }
+
+  .ghostText {
+    color: var(--ghost);
+  }
+
+  .steelText {
+    color: var(--steel);
+  }
+
+  .fireText {
+    color: var(--fire);
+  }
+
+  .waterText {
+    color: var(--water);
+  }
+
+  .grassText {
+    color: var(--grass);
+  }
+
+  .electricText {
+    color: var(--electric);
+  }
+
+  .psychicText {
+    color: var(--psychic);
+  }
+
+  .iceText {
+    color: var(--ice);
+  }
+
+  .iceText {
+    color: var(--ice);
+  }
+
+  .dragonText {
+    color: var(--dragon);
+  }
+
+  .darkText {
+    color: var(--dark);
+  }
+
+  .fairyText {
+    color: var(--fairy);
+  }
+
+  .hideTipo2 {
+    display: none;
+  }
+
+}
+
+///MINHA PROGRESS BAR
+.progress-container {
+  display: flex;
+  margin: 6px 0;
+
+  .stat {
+    width: 60px;
+    color: rgb(97, 97, 97);
+    font-weight: bold;
+  }
+
+  .minha-progress-bar-fundo {
+    width: 180px;
+    height: 20px;
+    border-radius: 10px;
+    background: rgba(97, 97, 97, 0.2);    
+    // border: 1px solid black;
+
+    .minha-progress-bar {  
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      border-radius: 10px;
+      // background-color: rgb(255, 78, 78);
+      min-width: 25px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+
+      .statValue {
+       margin-right: 6px;
+      }
+    }
+  }
+}

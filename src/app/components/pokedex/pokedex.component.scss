@@ -1,0 +1,152 @@
+.pokedex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 50px);
+  border: 1px solid black;
+  color: rgb(97, 97, 97);
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-gap: 100px;
+    // border: 1px solid red;
+    width: 800px;
+    height: 100%;
+    transition: 200ms;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      // height: 180px;
+      border: 1px solid rgb(232, 232, 232);
+      cursor: pointer;
+      border-radius: 12px;
+
+      span {
+        font-size: 12px;
+      }
+
+      img {
+        width: 70px;
+      }
+
+      .types {
+        display: flex;
+        color: white;     
+
+        p {
+          margin: 0 6px;
+          padding: 2px 6px;
+          border-radius: 6px;
+        }
+      }
+    }
+
+    .card:hover {
+      background-color: rgb(232, 232, 232);
+    }
+  }
+  .paginacao{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none; 
+      background-color: var(--verm);
+      color: white;     
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 200ms ease-in-out;
+      margin: 0 6px;
+    }
+    button:hover {
+      background-color: var(--dark-verm);
+    }
+  }
+}
+
+.normalClass {
+  background-color: var(--normal);
+}
+
+.fightClass {
+  background-color: var(--fight);
+}
+
+.flyingClass {
+  background-color: var(--flying);
+}
+
+.poisonClass {
+  background-color: var(--poison);
+}
+
+.groundClass {
+  background-color: var(--ground);
+}
+
+.rockClass {
+  background-color: var(--rock);
+}
+
+.bugClass {
+  background-color: var(--bug);
+}
+
+.ghostClass {
+  background-color: var(--ghost);
+}
+
+.stellClass {
+  background-color: var(--stell);
+}
+
+.fireClass {
+  background-color: var(--fire);
+}
+
+.waterClass {
+  background-color: var(--water);
+}
+
+.grassClass {
+  background-color: var(--grass);
+}
+
+.electricClass {
+  background-color: var(--electric);
+}
+
+.psychicClass {
+  background-color: var(--psychic);
+}
+
+.iceClass {
+  background-color: var(--ice);
+}
+
+.iceClass {
+  background-color: var(--ice);
+}
+
+.dragonClass {
+  background-color: var(--dragon);
+}
+
+.darkClass {
+  background-color: var(--dark);
+}
+
+.fairyClass {
+  background-color: var(--fairy);
+}

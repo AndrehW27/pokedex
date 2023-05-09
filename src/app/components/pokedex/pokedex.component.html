@@ -1,0 +1,66 @@
+<div class="pokedex-container">
+  <!-- <button (click)="GetPokedex()">Get Pokes</button> -->
+  <div class="grid">
+    <div *ngFor="let poke of pokeListToRender; index as i" class="card" routerLink="/pokemon"
+      (click)="GetSpecificPoke(pokeListToRender[i].id)">
+      <h4>{{pokeListToRender[i].name}}
+        <span>#{{pokeListToRender[i].id}}</span>
+      </h4>
+      <img src="{{pokeListToRender[i].sprites?.other.home.front_default}}" alt="">
+      <div class="types">
+        <p [ngClass]="{      
+          'normalClass':pokeListToRender[i].types[0].type.name==='normal',
+          'fightClass':pokeListToRender[i].types[0].type.name==='fight',
+          'flyingClass':pokeListToRender[i].types[0].type.name==='flying',
+          'poisonClass':pokeListToRender[i].types[0].type.name==='poison',
+          'groundClass':pokeListToRender[i].types[0].type.name==='ground',
+          'rockClass':pokeListToRender[i].types[0].type.name==='rock',
+          'bugClass':pokeListToRender[i].types[0].type.name==='bug',
+          'ghostClass':pokeListToRender[i].types[0].type.name==='ghost',
+          'steelClass':pokeListToRender[i].types[0].type.name==='steel',
+          'fireClass':pokeListToRender[i].types[0].type.name==='fire',
+          'waterClass':pokeListToRender[i].types[0].type.name==='water', 
+          'grassClass':pokeListToRender[i].types[0].type.name==='grass',
+          'electricClass':pokeListToRender[i].types[0].type.name==='electric',
+          'psychicClass':pokeListToRender[i].types[0].type.name==='psychic',
+          'iceClass':pokeListToRender[i].types[0].type.name==='ice',
+          'dragonClass':pokeListToRender[i].types[0].type.name==='dragon',
+          'darkClass':pokeListToRender[i].types[0].type.name==='dark',
+          'fairyClass':pokeListToRender[i].types[0].type.name==='fairy'
+          }">
+          {{pokeListToRender[i].types[0].type.name}}
+        </p>
+        <p *ngIf="pokeListToRender[i].types[1]" [ngClass]="{      
+          'normalClass':pokeListToRender[i].types[1].type.name==='normal',
+          'fightClass':pokeListToRender[i].types[1].type.name==='fight',
+          'flyingClass':pokeListToRender[i].types[1].type.name==='flying',
+          'poisonClass':pokeListToRender[i].types[1].type.name==='poison',
+          'groundClass':pokeListToRender[i].types[1].type.name==='ground',
+          'rockClass':pokeListToRender[i].types[1].type.name==='rock',
+          'bugClass':pokeListToRender[i].types[1].type.name==='bug',
+          'ghostClass':pokeListToRender[i].types[1].type.name==='ghost',
+          'steelClass':pokeListToRender[i].types[1].type.name==='steel',
+          'fireClass':pokeListToRender[i].types[1].type.name==='fire',
+          'waterClass':pokeListToRender[i].types[1].type.name==='water', 
+          'grassClass':pokeListToRender[i].types[1].type.name==='grass',
+          'electricClass':pokeListToRender[i].types[1].type.name==='electric',
+          'psychicClass':pokeListToRender[i].types[1].type.name==='psychic',
+          'iceClass':pokeListToRender[i].types[1].type.name==='ice',
+          'dragonClass':pokeListToRender[i].types[1].type.name==='dragon',
+          'darkClass':pokeListToRender[i].types[1].type.name==='dark',
+          'fairyClass':pokeListToRender[i].types[1].type.name==='fairy'
+          }">
+          {{pokeListToRender[i].types[1]?.type.name}}
+        </p>
+      </div>
+
+    </div>
+    <!-- <div *ngFor="let item of pokemonList | keyvalue">
+            {{item.key}}:{{item.value}}</div>         -->
+  </div>
+
+  <div class="paginacao">
+    <button (click)="GoPrev()">prev</button>
+    <button (click)="GoNext()">next</button>
+  </div>
+</div>
