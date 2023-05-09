@@ -7,6 +7,7 @@ export class PokeinfosService {
 
   constructor() { }
 
+  public inputServ: string | undefined;
   public nomeServ: string | undefined;
   public idServ: string | undefined;
   public imgServ: string | undefined;
