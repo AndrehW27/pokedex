@@ -12,12 +12,11 @@ export class PokedexComponent implements OnInit {
   pokemonList: Array<any> = [];
   pokeUrlList: Array<any> = [];
   pokeData2: Array<any> = [];
+  pokeListToRender: Array<any> = [];
+  
   movesAllData: Array<any> = [];
   moves: Array<any> = [];
-  pokeListToRender: Array<any> = [];
-
   // paginacao
-  pagAtual = 1;
   offSet = 0;
 
   SetInputValue = (id: any) => {
@@ -25,45 +24,41 @@ export class PokedexComponent implements OnInit {
   }
 
   GetPokedex = async () => {
-    if (this._pokeinfosService.changeGen) {
-      let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset='+this._pokeinfosService.genOffSet);
-      let pokeData = await res.json();
-      this.pokemonList = await pokeData.results;
-      for (let i = 0; i < this.pokemonList.length; i++) {
-        this.pokeUrlList[i] = this.pokemonList[i].url;
-      }
-      for (let i = 0; i < this.pokeUrlList.length; i++) {
-        let res2 = await fetch(this.pokeUrlList[i]);
-        let pokeData2 = await res2.json();
-        this.pokeListToRender[i] = pokeData2;
-      }
-      this._pokeinfosService.changeGen = false;
-    } else {
-      let res = await fetch('https://pokeapi.co/api/v2/pokemon/');
-      let pokeData = await res.json();
-      this.pokemonList = await pokeData.results;
-      for (let i = 0; i < this.pokemonList.length; i++) {
-        this.pokeUrlList[i] = this.pokemonList[i].url;
-      }
-      for (let i = 0; i < this.pokeUrlList.length; i++) {
-        let res2 = await fetch(this.pokeUrlList[i]);
-        let pokeData2 = await res2.json();
-        this.pokeListToRender[i] = pokeData2;
-      }
+    if (!this._pokeinfosService.changeGen) {
+      this._pokeinfosService.offSetServ = 0;
     }
-
+    let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this._pokeinfosService.offSetServ);
+    let pokeData = await res.json();
+    this.pokemonList = await pokeData.results;
+    for (let i = 0; i < this.pokemonList.length; i++) {
+      this.pokeUrlList[i] = this.pokemonList[i].url;
+    }
+    for (let i = 0; i < this.pokeUrlList.length; i++) {
+      let res2 = await fetch(this.pokeUrlList[i]);
+      let pokeData2 = await res2.json();
+      this.pokeListToRender[i] = pokeData2;
+    }
+    this._pokeinfosService.changeGen = false;
   }
 
   GoNext = async () => {
+
     window.scroll({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-    this.pagAtual = this.pagAtual + 1;
-    this.offSet = this.offSet + 20;
-    let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this.offSet);
+
+    console.log("offset antes:");
+    console.log(this._pokeinfosService.offSetServ);
+    this._pokeinfosService.offSetServ = this._pokeinfosService.offSetServ + 20;
+    console.log("offset depois:");
+    console.log(this._pokeinfosService.offSetServ);
+
+    let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this._pokeinfosService.offSetServ);
     let pokeData = await res.json();
+    console.log(pokeData);
+
     this.pokemonList = await pokeData.results;
     for (let i = 0; i < this.pokemonList.length; i++) {
       this.pokeUrlList[i] = this.pokemonList[i].url;
@@ -76,15 +71,20 @@ export class PokedexComponent implements OnInit {
   }
 
   GoPrev = async () => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    if (this.pagAtual > 1) {
-      this.pagAtual = this.pagAtual - 1;
-      this.offSet = this.offSet - 20;
-      let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this.offSet);
+    if (this._pokeinfosService.offSetServ > 0) {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+
+      console.log("offset antes:");
+      console.log(this._pokeinfosService.offSetServ);
+      this._pokeinfosService.offSetServ = this._pokeinfosService.offSetServ - 20;
+      console.log("offset depois:");
+      console.log(this._pokeinfosService.offSetServ);
+
+      let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=' + this._pokeinfosService.offSetServ);
       let pokeData = await res.json();
       this.pokemonList = await pokeData.results;
       for (let i = 0; i < this.pokemonList.length; i++) {

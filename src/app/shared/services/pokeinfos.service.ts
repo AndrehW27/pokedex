@@ -7,8 +7,8 @@ export class PokeinfosService {
 
   constructor() { }
 
-  public changeGen: boolean | undefined;
-  public genOffSet: number | undefined;
+  public changeGen: boolean = false;
+  public offSetServ: number = 0;
   public inputServ: string | undefined;
   public nomeServ: string | undefined;
   public idServ: string | undefined;

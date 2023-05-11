@@ -8,13 +8,11 @@ import { PokeinfosService } from 'src/app/shared/services/pokeinfos.service';
 })
 export class GenerationsComponent implements OnInit {
 
-  SetGen = (offset: number | undefined) =>{
-    console.log(this._pokeinfosService.changeGen);   
-
+  SetGen = (offset: number) =>{
     this._pokeinfosService.changeGen = true;
-    this._pokeinfosService.genOffSet = offset;
-    console.log(this._pokeinfosService.changeGen);    
-    console.log(this._pokeinfosService.genOffSet);    
+    this._pokeinfosService.offSetServ = offset;
+    // console.log(this._pokeinfosService.changeGen);    
+    // console.log(this._pokeinfosService.offSetServ);    
   }
 
   constructor(private _pokeinfosService: PokeinfosService) { }

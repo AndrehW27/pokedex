@@ -91,6 +91,7 @@ export class PokemonComponent implements OnInit {
     this.GetSpecificPoke();
   }
 
+
   constructor(public _pokeinfosService: PokeinfosService) { }
 
   ngOnInit() {
