@@ -13,7 +13,7 @@ export class PokedexComponent implements OnInit {
   pokeUrlList: Array<any> = [];
   pokeData2: Array<any> = [];
   pokeListToRender: Array<any> = [];
-  
+
   movesAllData: Array<any> = [];
   moves: Array<any> = [];
   // paginacao
@@ -96,6 +96,58 @@ export class PokedexComponent implements OnInit {
         this.pokeListToRender[i] = pokeData2;
       }
     }
+  }
+
+  GoFirst = async () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
+    console.log("offset antes:");
+    console.log(this._pokeinfosService.offSetServ);
+    this._pokeinfosService.offSetServ = 0;
+    console.log("offset depois:");
+
+    console.log(this._pokeinfosService.offSetServ);
+    let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset='+this._pokeinfosService.offSetServ);
+    let pokeData = await res.json();
+    this.pokemonList = await pokeData.results;
+    for (let i = 0; i < this.pokemonList.length; i++) {
+      this.pokeUrlList[i] = this.pokemonList[i].url;
+    }
+    for (let i = 0; i < this.pokeUrlList.length; i++) {
+      let res2 = await fetch(this.pokeUrlList[i]);
+      let pokeData2 = await res2.json();
+      this.pokeListToRender[i] = pokeData2;
+    }
+  }
+
+  GoLast = async () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    console.log("offset antes:");
+    console.log(this._pokeinfosService.offSetServ);
+    this._pokeinfosService.offSetServ = 885;
+    console.log("offset depois:");
+
+    console.log(this._pokeinfosService.offSetServ);
+    let res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset='+this._pokeinfosService.offSetServ);
+    let pokeData = await res.json();
+    this.pokemonList = await pokeData.results;
+    for (let i = 0; i < this.pokemonList.length; i++) {
+      this.pokeUrlList[i] = this.pokemonList[i].url;
+    }
+    for (let i = 0; i < this.pokeUrlList.length; i++) {
+      let res2 = await fetch(this.pokeUrlList[i]);
+      let pokeData2 = await res2.json();
+      this.pokeListToRender[i] = pokeData2;
+    }
+
   }
 
 

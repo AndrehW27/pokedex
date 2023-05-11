@@ -57,8 +57,14 @@
   </div>
 
   <div class="paginacao">
+    <div class="button-first" (click)="GoFirst()">
+      <img src="assets/left2.png" alt="">
+    </div>
     <button class="button-pag" (click)="GoPrev()">prev</button>
-    <button class="button-pag"  (click)="GoNext()">next</button>
+    <button class="button-pag" (click)="GoNext()">next</button>
+    <div class="button-last" (click)="GoLast()">
+      <img src="assets/right2.png" alt="">
+    </div>
     <!-- <button (click)="GetMoves()">GetMoves</button> -->
   </div>
 </div>
