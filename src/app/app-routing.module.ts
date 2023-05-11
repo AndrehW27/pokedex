@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { GenerationsComponent } from './components/generations/generations.component';
+import { FightComponent } from './components/fight/fight.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'pokemon',
     component: PokemonComponent,
+  },
+  {
+    path: 'generations',
+    component: GenerationsComponent,
+  },
+  {
+    path: 'fight',
+    component: FightComponent,
   },
   {
     path: '**',

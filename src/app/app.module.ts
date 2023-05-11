@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FightComponent } from './components/fight/fight.component';
+import { GenerationsComponent } from './components/generations/generations.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     PokedexComponent,
     PokemonComponent,
-    HeaderComponent
+    HeaderComponent,
+    FightComponent,
+    GenerationsComponent
   ],
   imports: [
     BrowserModule,

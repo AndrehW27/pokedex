@@ -9,6 +9,7 @@ import { PokeinfosService } from 'src/app/shared/services/pokeinfos.service';
 export class PokemonComponent implements OnInit {
 
   notFound = true;
+  buttonHome = false;
   img404 ="assets/Loading_icon.gif";
   nome = "";
   id = 0;
@@ -29,6 +30,7 @@ export class PokemonComponent implements OnInit {
     let res = await fetch('https://pokeapi.co/api/v2/pokemon/' + this._pokeinfosService.inputServ);
     if (res.status === 404) {
       this.notFound = true;
+      this.buttonHome = true;
       this.img404 = "assets/notfound.png"
     } else if (res.status !== 404) {
       this.img404 = "";

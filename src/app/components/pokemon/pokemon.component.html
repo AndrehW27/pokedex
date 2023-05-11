@@ -253,11 +253,13 @@
       </div>
     </div>
   </div>
+  <button class="gohome-button">Voltar</button>
+
 </div>
 
 <div *ngIf="notFound" class="notFound" style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
-  <img id="img404" src="{{img404}}" style="width: 500px;" alt="">
+  <img id="img404" src="{{img404}}" style="width: 400px;" alt="">
   <div>
-    <button class="gohome-button" routerLink="/home">Go home</button>
+    <button *ngIf="buttonHome" class="gohome-button" routerLink="/home">Go home</button>
   </div>
 </div>
