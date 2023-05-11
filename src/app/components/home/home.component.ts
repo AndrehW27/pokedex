@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   inputValue = "";
 
   SetInputValue = () =>{
-    this._pokeinfosService.inputServ = this.inputValue;
+    this._pokeinfosService.inputServ = this.inputValue.toLowerCase();
   }
 
   constructor(private _pokeinfosService: PokeinfosService) { }

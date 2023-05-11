@@ -1,7 +1,7 @@
 <div class="home-container">
   <img src="assets/pokemon-png-logo.webp"
     alt="">
-  <input class="find-input" type="text" placeholder="ID or Name(150 or Mewtwo)" [(ngModel)]="inputValue">
+  <input class="find-input" type="text" placeholder="ID or Name (151 or Mew)" [(ngModel)]="inputValue">
   <div>
     <button class="find-button" (click)="SetInputValue()" [routerLink]="inputValue ? ['/pokemon'] : []">Find Poke</button>
   </div>
