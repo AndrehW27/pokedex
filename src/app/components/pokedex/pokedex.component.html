@@ -2,7 +2,7 @@
   <div class="grid">
     <div *ngFor="let poke of pokeListToRender; index as i" class="card" routerLink="/pokemon"
       (click)="SetInputValue(pokeListToRender[i].id)">
-      <h4>{{pokeListToRender[i].name}}
+      <h4>{{pokeListToRender[i].name.charAt(0).toUpperCase() + pokeListToRender[i].name.slice(1)}}
         <span>#{{pokeListToRender[i].id}}</span>
       </h4>
       <img src="{{pokeListToRender[i].sprites?.other.home.front_default}}" alt="">

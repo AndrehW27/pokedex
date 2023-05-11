@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { log } from 'console';
 import { PokeinfosService } from 'src/app/shared/services/pokeinfos.service';
 
 @Component({
@@ -18,6 +19,8 @@ export class PokemonComponent implements OnInit {
   tipo2 = "";
   weight = 0;
   height = 0;
+  abilitie1 = "";
+  abilitie2 = "";
   hp = 0;
   atk = 0;
   def = 0;
@@ -50,6 +53,10 @@ export class PokemonComponent implements OnInit {
       this.tipo2 = await pokeData.types[1]?.type.name;
       this.weight = await pokeData.weight / 10;
       this.height = await pokeData.height / 10;
+      this.height = await pokeData.height / 10;
+      this.height = await pokeData.height / 10;
+      this.abilitie1 = await pokeData.abilities[0]?.ability?.name.charAt(0).toUpperCase() + pokeData.abilities[0]?.ability?.name.slice(1);
+      this.abilitie2 = await pokeData.abilities[1]?.ability?.name.charAt(0).toUpperCase() + pokeData.abilities[1]?.ability?.name.slice(1);;      
       this.hp = await pokeData.stats[0].base_stat;
       this.atk = await pokeData.stats[1].base_stat;
       this.def = await pokeData.stats[2].base_stat;
@@ -63,6 +70,8 @@ export class PokemonComponent implements OnInit {
       this._pokeinfosService.tipo2Serv = this.tipo2;
       this._pokeinfosService.weightServ = this.weight;
       this._pokeinfosService.heightServ = this.height;
+      this._pokeinfosService.abilitie1Serv = this.abilitie1;
+      this._pokeinfosService.abilitie2Serv = this.abilitie2;      
       this._pokeinfosService.hpServ = this.hp;
       this._pokeinfosService.atkServ = this.atk;
       this._pokeinfosService.defServ = this.def;
@@ -70,8 +79,16 @@ export class PokemonComponent implements OnInit {
       this._pokeinfosService.speDefServ = this.speDef;
       this._pokeinfosService.spdServ = this.spd;
     }
+  }
 
+  NextPoke = async () => {
+    this._pokeinfosService.inputServ = await (this.id+1).toString()
+    this.GetSpecificPoke();
+  }
 
+  PrevPoke = async () => {
+    this._pokeinfosService.inputServ = await (this.id-1).toString()
+    this.GetSpecificPoke();
   }
 
   constructor(public _pokeinfosService: PokeinfosService) { }

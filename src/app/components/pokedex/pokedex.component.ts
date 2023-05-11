@@ -98,19 +98,21 @@ export class PokedexComponent implements OnInit {
     }
   }
 
-  GetMoves = async () => {
-    let res = await fetch('https://pokeapi.co/api/v2/pokemon/6');
-    let pokeData = await res.json();
-    this.movesAllData = pokeData.moves;
-
-    for (let i = 0; i < this.movesAllData.length; i++) {
-      this.moves[i] = this.movesAllData[i].move.name;
-    }
-    console.log("this.moves");
-    console.log(this.moves);
 
 
-  }
+  // GetMoves = async () => {
+  //   let res = await fetch('https://pokeapi.co/api/v2/pokemon/6');
+  //   let pokeData = await res.json();
+  //   this.movesAllData = pokeData.moves;
+
+  //   for (let i = 0; i < this.movesAllData.length; i++) {
+  //     this.moves[i] = this.movesAllData[i].move.name;
+  //   }
+  //   console.log("this.moves");
+  //   console.log(this.moves);
+
+
+  // }
 
   constructor(private _pokeinfosService: PokeinfosService) { }
 

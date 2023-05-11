@@ -1,5 +1,5 @@
 <div *ngIf="!notFound" class="pokemon-container">
-  <h1 [ngClass]="{      
+  <h2 [ngClass]="{      
     'normalText':_pokeinfosService.tipo1Serv==='normal',
     'fightingText':_pokeinfosService.tipo1Serv==='fighting',
     'flyingText':_pokeinfosService.tipo1Serv==='flying',
@@ -23,8 +23,13 @@
     <span>
       #{{_pokeinfosService.idServ}}
     </span>
-  </h1>
-  <img src={{_pokeinfosService.imgServ}} alt="">
+  </h2>
+  <div class="img-e-botoes">
+    <div class="prevPoke" (click)="PrevPoke()"><</div>
+    <img src={{_pokeinfosService.imgServ}} alt="">
+    <div class="nextPoke" (click)="NextPoke()">></div>
+  </div>
+
   <div class="tipos">
     <div class="tipo1" [ngClass]="{      
         'normalClass':_pokeinfosService.tipo1Serv==='normal',
@@ -76,9 +81,51 @@
     <div class="peso">{{_pokeinfosService.weightServ}} Kg</div>
     <div class="altura">{{_pokeinfosService.heightServ}} m</div>
   </div>
+  <div class="habilidades">
+    <div [ngClass]="{            
+      'normalText':_pokeinfosService.tipo1Serv==='normal',
+      'fightingText':_pokeinfosService.tipo1Serv==='fighting',
+      'flyingText':_pokeinfosService.tipo1Serv==='flying',
+      'poisonText':_pokeinfosService.tipo1Serv==='poison',
+      'groundText':_pokeinfosService.tipo1Serv==='ground',
+      'rockText':_pokeinfosService.tipo1Serv==='rock',
+      'bugText':_pokeinfosService.tipo1Serv==='bug',
+      'ghostText':_pokeinfosService.tipo1Serv==='ghost',
+      'steelText':_pokeinfosService.tipo1Serv==='steel',
+      'fireText':_pokeinfosService.tipo1Serv==='fire',
+      'waterText':_pokeinfosService.tipo1Serv==='water', 
+      'grassText':_pokeinfosService.tipo1Serv==='grass',
+      'electricText':_pokeinfosService.tipo1Serv==='electric',
+      'psychicText':_pokeinfosService.tipo1Serv==='psychic',
+      'iceText':_pokeinfosService.tipo1Serv==='ice',
+      'dragonText':_pokeinfosService.tipo1Serv==='dragon',
+      'darkText':_pokeinfosService.tipo1Serv==='dark',
+      'fairyText':_pokeinfosService.tipo1Serv==='fairy'
+      }">{{_pokeinfosService.abilitie1Serv}}</div>
+    <div [ngClass]="{      
+      'normalText':_pokeinfosService.tipo1Serv==='normal',
+      'fightingText':_pokeinfosService.tipo1Serv==='fighting',
+      'flyingText':_pokeinfosService.tipo1Serv==='flying',
+      'poisonText':_pokeinfosService.tipo1Serv==='poison',
+      'groundText':_pokeinfosService.tipo1Serv==='ground',
+      'rockText':_pokeinfosService.tipo1Serv==='rock',
+      'bugText':_pokeinfosService.tipo1Serv==='bug',
+      'ghostText':_pokeinfosService.tipo1Serv==='ghost',
+      'steelText':_pokeinfosService.tipo1Serv==='steel',
+      'fireText':_pokeinfosService.tipo1Serv==='fire',
+      'waterText':_pokeinfosService.tipo1Serv==='water', 
+      'grassText':_pokeinfosService.tipo1Serv==='grass',
+      'electricText':_pokeinfosService.tipo1Serv==='electric',
+      'psychicText':_pokeinfosService.tipo1Serv==='psychic',
+      'iceText':_pokeinfosService.tipo1Serv==='ice',
+      'dragonText':_pokeinfosService.tipo1Serv==='dragon',
+      'darkText':_pokeinfosService.tipo1Serv==='dark',
+      'fairyText':_pokeinfosService.tipo1Serv==='fairy'
+      }">{{_pokeinfosService.abilitie2Serv}}</div>
+  </div>
 
   <div class="stats-container">
-    <div class="progress-container" [ngStyle]="{'margin-top':'50px'}">
+    <div class="progress-container">
       <div class="stat">HP:</div>
       <div class="minha-progress-bar-fundo">
         <div class="minha-progress-bar" [ngStyle]="{'width': _pokeinfosService.hpServ+'px'}" [ngClass]="{      

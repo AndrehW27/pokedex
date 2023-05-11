@@ -17,6 +17,8 @@ export class PokeinfosService {
   public tipo2Serv: string | undefined;
   public weightServ: number | undefined;
   public heightServ: number | undefined;
+  public abilitie1Serv: string | undefined;
+  public abilitie2Serv: string | undefined;
   public hpServ: number | undefined;
   public atkServ: number | undefined;
   public defServ: number | undefined;
