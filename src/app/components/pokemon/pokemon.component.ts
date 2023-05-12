@@ -9,6 +9,7 @@ import { PokeinfosService } from 'src/app/shared/services/pokeinfos.service';
 })
 export class PokemonComponent implements OnInit {
 
+  hide = false;
   notFound = true;
   buttonHome = false;
   img404 ="assets/Loading_icon.gif";
@@ -27,6 +28,10 @@ export class PokemonComponent implements OnInit {
   speAtk = 0;
   speDef = 0;
   spd = 0;
+
+  Hide = () =>{
+    this.hide = true;
+  }
 
   GetSpecificPoke = async () => {
 

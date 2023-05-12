@@ -1,4 +1,4 @@
-<div *ngIf="!notFound" class="pokemon-container">
+<div *ngIf="!notFound && !hide" class="pokemon-container">
   <h2 [ngClass]="{      
     'normalText':_pokeinfosService.tipo1Serv==='normal',
     'fightingText':_pokeinfosService.tipo1Serv==='fighting',
@@ -304,7 +304,7 @@
       </div>
     </div>
   </div>
-  <!-- <button routerLink="/pokedex" class="gohome-button">Voltar</button> -->
+<button (click)="Hide()" class="gohome-button">Hide</button>
 
 </div>
 

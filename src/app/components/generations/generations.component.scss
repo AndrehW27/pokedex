@@ -5,32 +5,41 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px 0 8px 0;
+  // padding: 8px 0 8px 0;
 
   .allgens {
     border: 1px solid rgb(232, 232, 232);
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 390px;
-    margin: 6px 0;
+    width: 420px;
+    // margin: 6px 0;
 
-    h4 {
-      margin: 8px 0 0 0;
+    p {
+      margin: 6px 0;
+      font-size: 14px;
+      font-weight: bold;
     }
 
     .imgPokes {
       img {
-        width: 100px;
+        width: 55px;
         margin: 0 6px;
       }
     }
 
   }
+
   .allgens:hover {
     background-color: rgb(232, 232, 232);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .allgens {
+    width: 100vw;
   }
 }
