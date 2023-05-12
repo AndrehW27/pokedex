@@ -110,14 +110,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 12px;
+    // margin-top: 6px;
 
     .button-first {
       cursor: pointer;
       transition: 200ms;
 
       img {
-        width: 20px;
+        width: 15px;
         margin-right: 12px;
       }
     }
@@ -127,7 +127,7 @@
       transition: 200ms;
 
       img {
-        width: 20px;
+        width: 15px;
         margin-left: 12px;
       }
     }
@@ -138,13 +138,13 @@
     }
 
     .button-pag {
-      padding: 6px 12px;
+      padding: 4px 10px;
       border-radius: 6px;
       border: none;
       background-color: var(--verm);
       color: white;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 12px;
       cursor: pointer;
       transition: 200ms ease-in-out;
       margin: 0 6px;
