@@ -25,9 +25,13 @@
     </span>
   </h2>
   <div class="img-e-botoes">
-    <div class="prevPoke" (click)="PrevPoke()"><</div>
+    <div class="prevPoke" (click)="PrevPoke()">
+      <img class="prevPokeImg" src="assets/left3.png" alt="">
+    </div>
     <img src={{_pokeinfosService.imgServ}} alt="">
-    <div class="nextPoke"(click)="NextPoke()">></div>
+    <div class="nextPoke"(click)="NextPoke()">
+      <img class="nextPokeImg" src="assets/right3.png" alt="">
+    </div>
   </div>
 
   <div class="tipos">
@@ -102,7 +106,7 @@
       'darkText':_pokeinfosService.tipo1Serv==='dark',
       'fairyText':_pokeinfosService.tipo1Serv==='fairy'
       }">{{_pokeinfosService.abilitie1Serv}}</div>
-    <div [ngClass]="{      
+    <div *ngIf="_pokeinfosService.abilitie2Serv" [ngClass]="{      
       'normalText':_pokeinfosService.tipo1Serv==='normal',
       'fightingText':_pokeinfosService.tipo1Serv==='fighting',
       'flyingText':_pokeinfosService.tipo1Serv==='flying',

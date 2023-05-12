@@ -23,7 +23,7 @@
   }
 
   .img-e-botoes {
-    width: 350px;
+    width: 310px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -35,6 +35,10 @@
       cursor: pointer;
       transition: 200ms;
       animation: pokeButtAnim 4s ease-in-out
+    }
+
+    .prevPokeImg, .nextPokeImg{
+      width: 20px;
     }
 
     .prevPoke:hover,
